@@ -3,15 +3,15 @@
 1. Install [Ollama](https://ollama.com) and pull a model:
 ollama pull phi3
 
-text
+
 2. Install the Python dependency:
 pip install ollama
 
-text
+
 3. Run the debate:
 python bot-fight.py "Is a hot dog a sandwich?"
 
-text
+
 Omit the topic to use the default.
 
 ## Sample Output
