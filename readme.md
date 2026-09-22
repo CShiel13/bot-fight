@@ -5,7 +5,7 @@ ollama pull phi3
 
 text
 2. Install the Python dependency:
-pip install ollama
+py -m pip install ollama
 
 text
 3. Run the debate:

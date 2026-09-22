@@ -26,8 +26,8 @@ resp = ollama.chat(model="phi3", messages=[
     {"role": "system", "content": provocateur_prompt},
     {"role": "user", "content": "Kick off the debate with a provocative opening statement."}
 ])
-print(f"\033[91mPROVOCATEUR:\033[0m {resp['message']['content']}")
-history.append(("PROVOCATEUR", resp['message']['content']))
+print(f"\033[91mPROVOCATEUR:\033[0m {resp.message.content}")
+history.append(("PROVOCATEUR", resp.message.content))
 
 # 10 prompts
 for _ in range(10):
@@ -37,8 +37,8 @@ for _ in range(10):
         {"role": "system", "content": earnest_prompt},
         {"role": "user", "content": f"Respond to: '{last}'"}
     ])
-    print(f"\033[94mEARNEST:\033[0m {resp['message']['content']}")
-    history.append(("EARNEST", resp['message']['content']))
+    print(f"\033[94mEARNEST:\033[0m {resp.message.content}")
+    history.append(("EARNEST", resp.message.content))
 
     # Provocateur responds
     last = history[-1][1]
@@ -46,8 +46,8 @@ for _ in range(10):
         {"role": "system", "content": provocateur_prompt},
         {"role": "user", "content": f"Respond to: '{last}'"}
     ])
-    print(f"\033[91mPROVOCATEUR:\033[0m {resp['message']['content']}")
-    history.append(("PROVOCATEUR", resp['message']['content']))
+    print(f"\033[91mPROVOCATEUR:\033[0m {resp.message.content}")
+    history.append(("PROVOCATEUR", resp.message.content))
 
 # Save transcript
 with open("transcript.txt", "w", encoding="utf-8") as f:
